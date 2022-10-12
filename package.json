@@ -1,15 +1,38 @@
 {
-  "name": "dds-express-44555",
+  "name": "dds-express-45555",
   "version": "1.0.0",
-  "description": "backend con express",
-  "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "test/test.js"
+    "swagger-autogen": "node ./swagger/swagger.js",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "@apidevtools/swagger-express-middleware": "^4.0.2",
+    "@apidevtools/swagger-parser": "^10.1.0",
+    "aa-sqlite": "^1.0.29",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.21.3",
+    "sqlite3": "^5.0.11",
+    "swagger-autogen": "^2.21.5",
+    "swagger-ui-express": "^4.5.0",
+    "cross-env": "^7.0.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "devDependencies": {
+      "jest": "^29.0.3",
+    "supertest": "^6.2.4"
   }
 }
